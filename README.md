@@ -13,7 +13,7 @@ playing on [table top simulator]()
 
 # Attacking
 [index](#index)<br>
-**attack step stack**
+### attack step stack :**
 >
 >-    attack declared
 >
