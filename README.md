@@ -12,7 +12,7 @@ playing on [table top simulator]()
 <hr>
 
 # Attacking
-[index](#index)
+[index](#index)<br>
 **attack step stack**
 >
 >-    attack declared
@@ -27,7 +27,7 @@ playing on [table top simulator]()
 <br><br>
 
 # Player Deaths
-[index](#index)
+[index](#index)<br>
 > if player health is at 0 and their death is not already on the stack, put it on the stack    
 
 <hr>
@@ -53,7 +53,7 @@ playing on [table top simulator]()
 <br><br>
 
 # Curse 
-[index](#index)
+[index](#index)<br>
 
 	2 triggers
     > trigger on enter
