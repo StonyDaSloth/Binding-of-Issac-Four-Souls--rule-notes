@@ -14,7 +14,7 @@ playing on [table top simulator]()
 
 # Attacking
 [index](#index)<br>
-### attack step stack :**
+### attack step stack :
 >
 >-    attack declared
 >
@@ -45,7 +45,7 @@ playing on [table top simulator]()
 
 
 ### if death is active player
-**cleanup step start :** 
+**cleanup step start :**
 > cleanup doesn't end until stack is fully resolved
 >
 > once stack is resolved and cleanup is over, go to end phas. End phase proceeds as normal
