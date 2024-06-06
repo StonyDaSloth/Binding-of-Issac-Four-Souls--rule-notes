@@ -1,6 +1,8 @@
 # Main Commands 
 *type commands as they are in the header for them to work*
 <hr>
+## -help
+> displays list of available commands
 
 ## -death penalty
 > prints death penalty information
