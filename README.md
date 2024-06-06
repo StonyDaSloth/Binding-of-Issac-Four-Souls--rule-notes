@@ -1,5 +1,7 @@
 # Binding-of-Issac-Four-Souls--rule-notes
-rule notes for binding of issac board game
+Rule highlights / notes for *Binding of Issac Four Souls* board game. 
+
+Comes with custom script to add to game that adds custom commands, *(prefixed by '-')*, to view rule information in the chat box.
 
 
 playing on: 
