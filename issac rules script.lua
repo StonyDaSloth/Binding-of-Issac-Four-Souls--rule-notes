@@ -15,13 +15,13 @@ end
 -- command response table
 function getResponseTable() 
     response = {}
-
+    keywordPrefix = " >- "
     response["help"] = "Commands: "
                     .. "\n-death penalty [info on the death penalty]"
                     .. "\n-player death [what happens on player death]"
                     .. "\n-attack steps [summary of steps when player declares attack]"
                     .. "\n-hand size [hand size limit]"
-                    .. "\n-? [(keyword) [description of given keyword]"
+                    .. "\n-?[(keyword) [description of given keyword]"
 
     -- commands
     response["death penalty"] = "non-eternal item is destroyed"
@@ -37,7 +37,7 @@ function getResponseTable()
                             .. "\n\t 3. attacking player chooses targets"
                             .. "\n\t 4. abilities can be triggered and interact with attack decleration"
 
-    response["hand size"] = "he max hand size is 10"
+    response["hand size"] = "the max hand size is 10"
 
     response["monster death"] = "1. monster moves out of monster slot"
                             .. "\n2. trigger - abilities that trigger on monster death before gaining"
@@ -51,43 +51,64 @@ function getResponseTable()
 
 
     -- keyword descriptions
-    -- response["?recharge"] = "untap an item"
+    response["?recharge"] = keywordPrefix.."untap an item"
 
-    -- response["?reroll"] = "re-roll has 2 meanings." 
-    --     .. "\nRe-roll a die means to roll it again."
-    --     .. "\nRe-roll an item means to destroy the item and the owner of the destroyed item gains a treasure"
-    --     .. "\n:: note, if the item destroyed is a shop item, it is replaced by the top card of the treasure deck"
+    response["?reroll"] = keywordPrefix.."re-roll has 2 meanings." 
+        .. "\nRe-roll a die means to roll it again."
+        .. "\nRe-roll an item means to destroy the item and the owner of the destroyed item gains a treasure"
+        .. "\n:: note, if the item destroyed is a shop item, it is replaced by the top card of the treasure deck"
     return response
 end
 -- checks for command repsonse and prints
 -- tables:
 -- https://www.lua.org/pil/2.5.html
 function getResponse(msg) 
+    local red = {r=1, g=0, b=0}
+    local blue = {r=0, g=0, b=1}
+    local green = {r=0, g=1, b=0}
+    local purple = {r=.45, g=.45, b=.7}
+
     response = getResponseTable()
-    print("\n-------------------------")
+    printToAll("\n-------------------------", red)
     if msg == "-help" then
-        print (response["help"])
+        printToAll (response["help"], green)
     end
     if msg == "-death penalty" then 
-        print (response["death penalty"])
+        printToAll (response["death penalty"], green)
     end
     if msg == "-player death" then   
-        print (response["player death"])
+        printToAll (response["player death"], green)
     end
     if msg == "-attack steps" then
-        print(response["attack steps"])
+        printToAll(response["attack steps"], green)
     end
     if msg == "-hand size" then
-        print(response["hand size"])
+        printToAll(response["hand size"], green)
     end
     if msg == "-monster death" then
-        print(response["monster death"])
+        printToAll(response["monster death"], green)
     end
 
     -- response for curse is broken
     -- if msg == "-curse" then
     --     print(response["curse"])
     -- end
+
+    -- keyword descriptions
+    if msg == "-?recharge" then
+        printToAll(response["?recharge"], purple)
+    end
+
+    -- allow for different forms of re roll to be entered
+    if msg == "-?reroll" then
+        printToAll(response["?reroll"], purple)
+    end
+    if msg == "-?re-roll" then
+        printToAll(response["?reroll"], purple)
+    end
+    if msg == "-?re roll" then
+        printToAll(response["?reroll"], purple)
+    end
     -- other commands
     if (msg == "-red") then
         Lighting.light_intensity = 2
@@ -110,5 +131,5 @@ function getResponse(msg)
     if (msg == "-flip table") then
         flipTable()
     end
-    print("-------------------------\n")
+    printToAll("-------------------------\n", red)
 end
