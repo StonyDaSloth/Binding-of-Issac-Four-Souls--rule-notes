@@ -11,16 +11,34 @@
 ## -attack steps
 > prints the order in which attacks happen, from active player declaring they are attacking
 
+## -hand size
+> prints the max hand size
 
-# Fun Commands
+## -monster death
+> prints game order on monster death
+
+# Keyword Commands
+*commands that add '?' to the prefrix that give description on keywords*
+## -?recharge
+> defines keyword recharge
+
+## -?reroll
+### -?re-roll
+### -?re roll
+> defines both re roll definitions
+
+# Other Commands
 
 <hr>
 
 ## red
-> changes board to red
+> -changes board to red
 
-## blue
+## -blue
 > changes board to blue
 
-## grenn
+## -grenn
 > changes board to green
+
+## -flip table
+> flips the table
